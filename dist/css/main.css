@@ -1,6 +1,13 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #272727;
-  color: #fff;
+  background: #6fb0b4;
+  color: white;
   font-weight: 700;
 }
 
@@ -11,7 +18,7 @@ body {
 
 .main .main__paragraph {
   font-weight: 500;
-  color: red;
+  color: white;
 }
 
 .main .main__paragraph:hover {
