@@ -1,11 +1,11 @@
 // Partials
 @import "./resets";
 @import "./variables";
+@import "./mixins";
 
 @function weight($weight-name) {
     @return map-get($font-weight, $weight-name);
 }
-
 
 body {
     background: $primary-color;
@@ -16,10 +16,11 @@ body {
 
 // Nesting
 .main {
-    width: 80%;
+    @include flexCenter(row);
+    width: 100% - 20%;
     margin: 0 auto;
 
-    #{&}__paragraph {
+    #{&}__paragraph1 {
         font-weight: weight(medium);
         color: $text-color;
 
@@ -27,4 +28,21 @@ body {
             color: pink;
         }
     }
+
+    // Extend
+    #{&}__paragraph2 {
+        @extend .main__paragraph1;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.light {
+    @include theme(false);
 }
