@@ -1,3 +1,31 @@
+// Variables
+$primary-color: #272727;
+$accent-color: red;
+$text-color: #fff;
+
+$font-weight: ("regular" : 400,
+    "medium" : 500,
+    "bold" : 700,
+);
+
 body {
-    background: rgb(38, 140, 165);
+    background: $primary-color;
+    color: $text-color;
+    // maping
+    font-weight: map-get($font-weight, bold);
+}
+
+// Nesting
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}__paragraph {
+        font-weight: map-get($font-weight, medium);
+        color: $accent-color;
+
+        &:hover {
+            color: pink;
+        }
+    }
 }
